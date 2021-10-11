@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 创建一个window事项 */
+        window.onload=function(){
+            /* 创建一个广州节点。添加到id为city下 */
+            myClick("btn01",function(){
+                /* 创建广州节点<li>广州</li> */
+                //创建li元素几点
+                /* doucument.createElement()
+                    可以用于创建一个元素节点
+                    她需要一个标签名作为参数，将会根据标签名创建元素节点对象，
+                    并将创建好的对象作为返回值
+                */
+               var li=document.createElement("li");
+                /* 
+                    document.createTextNode()
+                    用于创建一个文本节点对象
+                    需要一个文本内容作为参数，将会根据内容创建文本节点，并将新的节点返回
+                */
+               var gzText= document.createTextNode("广州")
+            })
+
+
+
+            /* 创建一个点击函数 */
+            function myClick(idStr,fun){
+                var btn=document.getElementById("idStr");
+                btn.onclick=fun;
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>
+                你喜欢哪个城市
+            </p>
+            <ul>
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+        </div>
+        <div id="btnList">
+            <div><button id="btn01">1</button></div>
+            <div><button id="btn02">2</button></div>
+            <div><button id="btn03">3</button></div>
+            <div><button id="btn04">4</button></div>
+            <div><button id="btn05">5</button></div>
+            <div><button id="btn06">6</button></div>
+            <div><button id="btn07">7</button></div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
