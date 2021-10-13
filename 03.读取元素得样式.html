@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /* 创建单击响应函数 */
+
+            var btno1=document.getElementById("btno1");
+            var box1=document.getElementById("box1");
+            btno1.onclick=function(){
+                /* 获取当前元素的样式 */
+                /*元素.currentStyle.样式名
+                可以用来读取当前元素正在显示的样式
+                    如果当前原色没有设置该样式，则返回它的默认值 
+                    只支持IE浏览器
+                */
+               //alert(box1.currentStyle.width);
+                /* 
+                    getComputedStyle()这个方法可以获取元素的当前样式，
+                        这个是一个window方法，可以直接使用
+                            需要两个参数
+                                第一个：需要获取的元素样式
+                                第二个：可以传递一个伪元素，一般都是null
+                    该方法会返回一个对象，对象中封装了当前元素对应的样式
+                */
+
+                var obj= getComputedStyle(box1,null);
+                alert(obj);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <button id="btno1">修改</button>
+    <div id="box1"></div>
+
+</body>
+
+</html>
