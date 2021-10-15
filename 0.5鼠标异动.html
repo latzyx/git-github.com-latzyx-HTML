@@ -17,9 +17,15 @@
     /* 使用 */  
     window.onload=function(){
         var box1=document.getElementById("box1");
-        /* onmouseover() 用来获取鼠标移动信息 */
-        box1.onmouseout =function(){
-            box1.
+        /* onmouseover() 用来获取鼠标移动信息
+            onmouseout() 用来获取点击的事项
+        
+        */
+        box1.onmouseout =function(event){
+
+            var left=event.screenX()+"px";
+            var top=event.screenY()+"px";
+            
             
         }
 
