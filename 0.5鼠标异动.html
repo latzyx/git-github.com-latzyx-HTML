@@ -11,12 +11,14 @@
             width: 100px;
             height: 100px;
             background-color: red;
+            position: absolute;
         }
     </style>
     <script> 
     /* 使用 */  
     window.onload=function(){
         var box1=document.getElementById("box1");
+<<<<<<< HEAD
         /* onmouseover() 用来获取鼠标移动信息
             onmouseout() 用来获取点击的事项
         
@@ -26,14 +28,35 @@
             var left=event.screenX()+"px";
             var top=event.screenY()+"px";
             
+=======
+        var box2=document.getElementById("box2");
+        /* onmousemove() 用来获取鼠标移动信息*/
+        document.onmousemove =function(event){
+            //clientX 用来获取鼠标在视窗中的X轴
+            //clientY 用来获取鼠标在视窗中的Y轴
+            /* 如果使用元素作为绑定事件的对象，这样就会导致出现鼠标超出范围无法移动的情况 建议使用document来绑定事件 */
+           // var left =event.clientX;
+          //  var top =event.clientY;
+
+            /* 设置div的偏移量 */
+            /* 使用client 来获取偏移量存在定位偏移的情况（视窗出现滚动条）
+                所以使用pageX和pageY来获取鼠标在document的坐标(IE8B不支持)
+>>>>>>> 703b9be7ebe491bf4a486d33d040afffbebed9c8
             
+            */
+            var left=event.pageX;
+            var top =event.pageY;
+
+            box1.style.left=left+"px";
+            box1.style.top=top+"px";
+            /* 写入偏移量坐标 */
         }
 
     }
     </script>
 </head>
 
-<body>
+<body style="width: 1000px;">
 
     <div id="box1">
 
