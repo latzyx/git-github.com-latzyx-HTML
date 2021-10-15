@@ -30,6 +30,8 @@
         var box2=document.getElementById("box2");
         /* onmousemove() 用来获取鼠标移动信息*/
         document.onmousemove =function(event){
+            
+            event!=window.event;
             //clientX 用来获取鼠标在视窗中的X轴
             //clientY 用来获取鼠标在视窗中的Y轴
             /* 如果使用元素作为绑定事件的对象，这样就会导致出现鼠标超出范围无法移动的情况 建议使用document来绑定事件 */
