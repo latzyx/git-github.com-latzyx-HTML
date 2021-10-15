@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        /* 实现点击修改 */
+        window.onload = function () {
+            /* 获取按钮，并绑定单击响应函数 */
+            var box1 = document.getElementById("box1");
+            var btn0btno11 = document.getElementById("btno1")
+            btno1.onclick = function () {
+                /* 使用对象.style.修改的内容="修改值" (属性值需要转化为字符"")* /* 调用style属性的样式 */
+               /// box1.style.width = "100px";
+                //box1.style.height = "20px";
+                /* 拿到sytle属性，直接复制，属于典型的element.attribute 格式设置属性值 */
+
+                box1.style = "background-background-color：red"
+
+ 
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <button id="btno1">点击</button>
+    <br>
+    <br>
+    <div id="box1"></div>
+
+</body>
+
+</html>
