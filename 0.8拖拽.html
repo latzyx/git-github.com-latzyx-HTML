@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /* 先获取元素 */
+            var box1 = document.getElementById("box1");
+            box1.onmousedown = function () {
+                // 为document绑定一个onmousemove事件
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    //当鼠标移动式被拖拽元素跟随鼠标移动onmousermove
+                    //获取鼠标的坐标
+                    var left = event.clientX;
+                    var top = event.clientY;
+                    //修改box1的位置
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px";
+                };
+                //为document帮点一个鼠标松开事件
+                document.onmouseup = function () {
+                    //当鼠标送开始，被拖拽元素股东在当前位置onmouseup
+                    //取消document的onmousemove事件
+                    //现在还是多次事件,会被其他的doucument事件触发
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                }
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+
+</body>
+
+</html>
