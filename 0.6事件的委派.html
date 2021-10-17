@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 目的：了解事件的委派
+
+
+         -->
+    <script>
+        window.onload = function () {
+
+            /* 获取元素属性 */
+            var u1 = document.getElementById("u1");
+
+
+            /* 添加一个点击增加内容的按钮事件 */
+            var btn01 = document.getElementById("btn01");
+
+            btn01.onclick = function () {
+                /* 添加内容请用 createElement ,别跟个猪一样还用获取元素*/
+                var li = document.createElement("li");
+                /* 在带引号的代码中只能使用与其相反的引号,外面是单里面是双,外面是双,里面就是单 */
+                li.innerHTML = "<a href='javascript:;'class='like'> 超链接</a>";
+                u1.appendChild(li);
+            };
+            /* 新添加的元素没有绑定到触发事件
+                如果用document的响应事件来写就会出现不能及时触发的情况 
+                那就绑定给父元素
+                target :获取触发事件的元素属性，利用触发时间的元素属性来判断
+            */
+            u1.onclick = function (event) {
+                event = event || window.event;
+                if (event.target.className == "like") {
+                    alert("你是真的流弊")
+                }
+            }
+
+            /* 先获取内容 */
+            /*   var allA = document.getElementsByTagName("a");
+              //面对存在多个的同名的对象元素,请遍历绑定事件
+               for (var i = 0; i < allA.length; i++) {
+                  document.onclick = function () {
+                      allA[i].onclick = function () {
+                          alert("aaa");
+                      }
+                      
+                  }
+              };  */
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="btn01">点击增加</button>
+    <ul id="u1">
+        <li><a href="javascript:;" class="like">第一个超链接</a></li>
+        <li><a href="javascript:;" class="like">第二个超链接</a></li>
+        <li><a href="javascript:;" class="like">第三个超链接</a></li>
+        <li><a href="javascript:;" class="like">第四个超链接</a></li>
+        <div>我是</div>
+    </ul>
+</body>
+
+</html>
